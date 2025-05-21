@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harold Edgerton</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    @font-face {
+        font-family: kastelov;
+        src: url(kastelov.otf);
+    }
+
+    body {
+    background-color: black;
+    color: aliceblue;
+}
+
+.two {
+    position: relative;
+    margin-left: 60px;
+
+}
+.one {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+.title {
+    font-family: kastelov;
+    letter-spacing: 2px;
+    font-size: 155px; 
+    margin: 0px;
+}
+
+h2 {
+    position: absolute;
+    top: 8px;
+    font-size: 28px;
+    text-align: left;
+    font-family: kastelov;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+.left-content {
+    width: 500px;
+    height: auto;
+    margin-top: 10em;
+    margin-left: 100px;
+}
+
+p {
+
+    font-size: 12px;
+    font-family: kastelov;
+    line-height: 1.6;
+    text-align: left;
+
+}
+
+
+.input-fields {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+input[type="text"] {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: aliceblue;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#submitButton {
+    cursor: pointer;
+    background-color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 18px;
+}
+
+.right-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#placeholderImage, #displayedImage {
+    width: 50%; 
+    height: auto;
+    padding-top: 2px;
+    object-fit: contain;
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="left-content">
+            <p>Harold Edgerton was born in Fremont, Nebraska, and he received a BS in electrical engineering from the University of Nebraska. Edgerton revolutionized photography, science, military surveillance, Hollywood filmmaking, and the media through his invention of the strobe light in the early 1930s. The photographs that resulted from his scientific experiments were championed in the 1930s as representative of the New Objectivity, the American counterpart to the German Neue Sachlichkeit. Edgerton's photography of split-second motion may be seen as an expansion beyond the nineteenth-century locomotion studies of by Eadweard Muybridge and Étienne-Jules Marey.</p>
+            
+            <div class="input-fields">
+                <input type="text" id="charInput1" maxlength="1">
+                <input type="text" id="charInput2" maxlength="1">
+                <button onclick="displayImage()" id="submitButton">Freeze Time</button>
+            </div> <br>
+        </div>
+
+        <div class="right-content">
+            <div class="images">
+                <img id="placeholderImage" src="images/placeholderimage.jpg" alt="placeholder image">
+                <img id="displayedImage" alt="Edgerton's photographs" style="display: none;">
+            </div>
+        </div>
+    </div>
+    <div class="one ">
+   <div class="two">
+    <h2>The man who froze time</h2>
+    <div class="title">Harold Edgerton</div>
+  </div>
+</div>
+
+<script>
+    const group1Images = ['images/banana_bullet.jpg', 'images/bullet_light.jpg', 'images/egg_bullet.jpg', 'images/card_bullet.jpg', 'images/apple_bullet.jpg'];
+    const group2Images = ['images/highspeed1.jpg', 'images/highspeed2.jpg', 'images/highspeed3.jpg', 'images/highspeed4.jpg', 'images/highspeed5.jpg', 'images/highspeed6.jpg', 'images/ballerina.jpg'];
+    const group3Images = ['images/waterfaucet.jpg', 'images/water.jpg', 'images/water_droplet.jpg', 'images/milk.jpg', 'images/soda.jpg', 'images/cokebottle.jpg'];
+    const group4Images = ['images/flame_bullet.jpg', 'images/supersonic.jpg', 'images/atomic_explosion.jpg'];
+    const group5Images = ['images/dove.jpg', 'images/greyhound.jpg', 'images/bird1.jpg', 'images/pigeon.jpg', 'images/cicada.jpg'];
+
+    const group1 = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const group2 = ['F', 'G', 'H', 'I', 'J', 'K', 'L'];
+    const group3 = ['M', 'N', 'O', 'P', 'Q', 'R'];
+    const group4 = ['S', 'T', 'U'];
+    const group5 = ['V', 'W', 'X', 'Y', 'Z'];
+
+    const charInput1 = document.getElementById("charInput1");
+    const charInput2 = document.getElementById("charInput2");
+    const submitButton = document.getElementById("submitButton");
+    const displayedImage = document.getElementById("displayedImage");
+    const placeholderImage = document.getElementById("placeholderImage");
+
+    function displayImage() {
+        let letter1 = charInput1.value.toUpperCase();
+        let letter2 = charInput2.value.toUpperCase(); 
+        let imageSrc = '';
+    
+        if (group1.includes(letter1)) {
+            imageSrc = group1Images[Math.floor(Math.random() * group1Images.length)];
+        } else if (group2.includes(letter1)) {
+            imageSrc = group2Images[Math.floor(Math.random() * group2Images.length)];
+        } else if (group3.includes(letter1)) {
+            imageSrc = group3Images[Math.floor(Math.random() * group3Images.length)];
+        } else if (group4.includes(letter1)) {
+            imageSrc = group4Images[Math.floor(Math.random() * group4Images.length)];
+        } else if (group5.includes(letter1)) {
+            imageSrc = group5Images[Math.floor(Math.random() * group5Images.length)];
+        } else { 
+            imageSrc = "images/placeholder.jpg";
+        }
+
+        placeholderImage.style.display = "none";
+        displayedImage.style.display = "block";
+        displayedImage.src = imageSrc;
+    }
+</script>
+
+</body>
+</html>

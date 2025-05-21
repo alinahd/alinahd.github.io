@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alinah Danish</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background: white;
+      margin: 40px;
+      color: #5a5454;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .entry {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+      border-bottom: 1px solid #aaa;
+    }
+
+    .category {
+      font-style: italic;
+      font-size: 14px;
+      color: #999;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: 400;
+      text-decoration: none;
+      color: inherit;
+      transition: font-style 0.3s;
+    }
+
+    .title:hover {
+      font-style: italic;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      padding-left: 10%;
+      padding: 20px;
+      background: white;
+      position: sticky;
+      top: 0;
+      width: 100%;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: black;
+      font-size: 32px;
+      font-weight: bold;
+      margin: 0 15px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff4500;
+      text-decoration: underline;
+    }
+
+    .content {
+      margin-top: 40px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #preview {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border-radius: 8px;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="aboutme.html">Alinah Danish</a>
+  </div>
+
+  <div class="container">
+    <div class="entry">
+      <span class="category">Poster</span>
+      <a href="I am woman.html" class="title" data-image="images/1.jpg" data-width="370px" data-height="auto">I Am Woman</a>
+    </div>
+    <div class="entry">
+      <span class="category">Poster</span>
+      <a href="sagittarius.html" class="title" data-image="images/2 copy.jpg" data-width="370px" data-height="auto">Mapping the Karachi Skies</a>
+    </div>
+    <div class="entry">
+      <span class="category">Typography</span>
+      <a href="cropped_letter.html" class="title" data-image="images/3.jpg" data-width="380px" data-height="auto">Cropped Letter</a>
+    </div>
+    <div class="entry">
+      <span class="category">Typography</span>
+      <a href="Digital detox.html" class="title" data-image="images/digital.jpg" data-width="370px" data-height="auto">Digital Detox</a>
+    </div>
+    <div class="entry">
+        <span class="category">Book</span>
+        <a href="home.html" class="title" data-image="images/13.png" data-width="600px" data-height="auto" padding-left="550px">My Kind of Home</a>
+      </div>
+      <div class="entry">
+        <span class="category">Book</span>
+        <a href="once upon a time.html" class="title" data-image="images/11.png" data-width="650px" data-height="auto" padding-left="550px">Once Upon a Time</a>
+      </div>
+      <div class="entry">
+        <span class="category">Web Design</span>
+        <a href="rackd.html" class="title" data-image="images/8.png" data-width="350px" data-height="auto">RACKD</a>
+      </div>
+      <div class="entry">
+          <span class="category">Web Design</span>
+          <a href="nearby.html" class="title" data-image="images/9.png" data-width="200px" data-height="auto" >Nearby</a>
+        </div>
+        <div class="entry">
+            <span class="category">Web Design</span>
+            <a href="finalproject2.html" class="title" data-image="images/edgerton.jpg" data-width="400px" data-height="auto">Harold Edgerton</a>
+          </div>
+    <div class="entry">
+      <span class="category">Web Design</span>
+      <a href="https://alinahd.github.io/memories/entries/homepage/homepage.html" class="title" data-image="images/digital_scrapbook.jpg" data-width="360px" data-height="auto">A Digital Scrapbook</a>
+    </div>
+    <div class="entry">
+      <span class="category">Web Design</span>
+      <a href="the art of creation.html" class="title" data-image="images/Frame 35.png" data-width="360px" data-height="auto">The Art of Creation: Human & Machine</a>
+    </div>
+    
+  
+      
+  </div>
+  <img id="preview" src="" alt="Preview" />
+
+  <script>
+    const titles = document.querySelectorAll('.title');
+    const preview = document.getElementById('preview');
+
+    titles.forEach(title => {
+      title.addEventListener('mouseover', () => {
+        const imageUrl = title.getAttribute('data-image');
+        const width = title.getAttribute('data-width') || '300px';
+        const height = title.getAttribute('data-height') || 'auto';
+
+        if (imageUrl) {
+          preview.src = imageUrl;
+          preview.style.width = width;
+          preview.style.height = height;
+          preview.style.opacity = '1';
+        }
+      });
+
+      title.addEventListener('mouseout', () => {
+        preview.style.opacity = '0';
+        setTimeout(() => {
+          preview.src = '';
+        }, 300);
+      });
+    });
+  </script>
+
+</body>
+</html>

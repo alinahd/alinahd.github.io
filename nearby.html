@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nearby</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: black;
+      font-family: 'Playfair Display', serif;
+      margin: 40px;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 50px;
+      text-align: left;
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .description {
+      flex: 1;
+      max-width: 600px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .video-container {
+      flex-shrink: 0;
+    }
+
+    video {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin: 40px 0 20px;
+      border-bottom: 1px solid #aaa;
+      padding-bottom: 10px;
+    }
+
+    .figma-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 10px;
+    }
+
+    .figma-grid img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .figma-grid img {
+        height: auto;
+        object-fit: contain;
+      }
+    }
+
+    a.figma-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a.figma-link:hover {
+  color: #4b7ce6; 
+}
+
+  </style>
+</head>
+<body>
+  <h1>Nearby</h1>
+  <div class="content">
+    <p class="description">
+      Nearby is a community-driven app that helps neighbors stay connected and support one another in meaningful ways.
+      Whether you’re reporting a water or electricity outage, offering to help someone nearby, sharing local updates, or
+      organizing events, Nearby makes it easy to engage with the people around you. The app encourages trust,
+      collaboration, and real-time communication—making your neighborhood feel more connected, informed, and cared for.
+    </p>
+    <div class="video-container">
+      <video src="images/nearby.mp4" autoplay muted loop></video>
+    </div>
+  </div>
+
+  <h2><a href="https://www.figma.com/design/EGcJaUUvDmjG9yCLyAltEt/Alinah-Danish?node-id=160-759&t=sb7okRVa60OJ7dag-1" target="_blank" class="figma-link">Design System</a></h2>
+
+  <div class="figma-grid">
+    <img src="images/figma nearby/components5.jpg" alt="Figma Component 5">
+    <img src="images/figma nearby/components.jpg" alt="Figma components"
+    <img src="images/figma nearby/components2.jpg" alt="Figma Component 2">
+    <img src="images/figma nearby/components3.jpg" alt="Figma Component 3">
+    <img src="images/figma nearby/components4.jpg" alt="Figma Component 4">
+    <img src="images/figma nearby/components1.jpg" alt="Figma Component 4">
+    <img src="images/figma nearby/interactions.jpg" alt="Figma Interactions">
+    <img src="images/figma nearby/image.jpg" alt="Figma Interactions">
+    <img src="images/figma nearby/image2.jpg" alt="Figma Interactions">
+  </div>
+</body>
+</html>
