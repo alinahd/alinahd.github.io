@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alinah Danish</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background: white;
+      margin: 40px;
+      color: #5a5454;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      margin: 0 auto;
+     padding: 20px;
+    }
+
+    .category {
+      font-size: 16px;
+      color: #7c7a7a;
+      margin-top: 5px;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: 400;
+      text-decoration: none;
+      color: inherit;
+      transition: font-style 0.3s;
+    }
+
+    .title:hover {
+      font-style: italic;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      padding-left: 10%;
+      padding: 20px;
+      background: white;
+      position: sticky;
+      top: 0;
+      width: 100%;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: black;
+      font-size: 32px;
+      font-weight: bold;
+      margin: 0 15px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff4500;
+      text-decoration: underline;
+    }
+
+    .content {
+      margin-top: 40px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #preview {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border-radius: 8px;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      z-index: 1000;
+      pointer-events: none;
+    }
+  
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="portfolio.html">Portfolio</a>
+  </div>
+
+  <div class="container">
+    <div class="entry">
+      <span class="category">Hi, I’m Alinah! I’m a second-year Communication Design student at Parsons School of Design, where I’m exploring the dynamic world of visual communication with a particular focus on interaction design. I’m passionate about how design can shape the way people interact with the world around them, and I’m driven by the idea of creating intuitive, engaging, and meaningful digital experiences.
+        Through my work, I combine principles of graphic design, technology, and user-centered design to create experiences that aren’t just visually appealing but also functional and user-friendly. Whether it’s crafting interactive interfaces, exploring motion design, or building immersive digital environments, I’m always thinking about how design can facilitate connections and elevate the way we interact with content. I’m excited to continue exploring the evolving landscape of communication design and look forward to the projects ahead.
+      </span>
+    </div>
+  
+      
+  </div>
+  <img id="preview" src="" alt="Preview" />
+
+  <script>
+    const titles = document.querySelectorAll('.title');
+    const preview = document.getElementById('preview');
+
+    titles.forEach(title => {
+      title.addEventListener('mouseover', () => {
+        const imageUrl = title.getAttribute('data-image');
+        const width = title.getAttribute('data-width') || '300px';
+        const height = title.getAttribute('data-height') || 'auto';
+
+        if (imageUrl) {
+          preview.src = imageUrl;
+          preview.style.width = width;
+          preview.style.height = height;
+          preview.style.opacity = '1';
+        }
+      });
+
+      title.addEventListener('mouseout', () => {
+        preview.style.opacity = '0';
+        setTimeout(() => {
+          preview.src = '';
+        }, 300);
+      });
+    });
+  </script>
+
+</body>
+</html>
